@@ -1,0 +1,107 @@
+.main_content {
+  width: 84.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2.5rem, calc(2.071rem + 2.143vw), 4rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content_introductory-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+.content_introductory-text > .introductory-text_title {
+  color: var(--primary-800);
+  font-size: var(--fsz-fr-headings);
+  font-weight: 700;
+}
+.content_introductory-text > .introductory-text_info {
+  color: var(--primary-900);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.content_warning-block {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f2de;
+  border-radius: var(--radius-fr-block);
+  border: 1px solid var(--primary-200);
+}
+.warning-block_content {
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.warning-block_content > .content_title {
+  color: var(--primary-900);
+  font-size: clamp(1.75rem, calc(1.536rem + 0.893vw), 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 130%;
+}
+.warning-block_content > .content_description {
+  color: var(--gray-700);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  text-align: center;
+}
+.warning-block_content > .content_nav-in-telegram {
+  width: 205px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-800);
+  color: white;
+  border-radius: var(--radius-fr-ui);
+  transition: all 0.3s;
+}
+.content_nav-in-telegram:hover {
+  background-color: var(--primary-700);
+}
+
+@media (max-width: 812px) {
+  .main_content {
+    width: 86%;
+  }
+
+  .warning-block_content {
+    width: 100%;
+  }
+  .warning-block_content > .content_nav-in-telegram {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .main_content {
+    width: 92.4%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: 0 auto;
+    padding: 32px 0;
+  }
+  .warning-block_content > .content_nav-in-telegram {
+    width: 100%;
+  }
+}

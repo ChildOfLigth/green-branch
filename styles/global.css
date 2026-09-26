@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+
+:root {
+  --primary-1: #fcfdfb;
+  --primary-50: #eefaec;
+  --primary-100: #deefd2;
+  --primary-200: #bde0a3;
+  --primary-300: #83e26c;
+  --primary-400: #5bda40;
+  --primary-500: #68b234;
+  --primary-600: #379f23;
+  --primary-700: #467e25;
+  --primary-800: #37601a;
+  --primary-850: #2a4715;
+  --primary-900: #213611;
+  --primary-950: #1e3e15;
+  --primary-999: #040a01;
+
+  --kournikova-50: #fcf4d3;
+  --kournikova-100: #f7f2de;
+  --kournikova-200: #f6da65;
+  --kournikova-300: #e5ca5d;
+  --kournikova-400: #d2b654;
+  --kournikova-500: #c1a54c;
+  --kournikova-600: #a4843c;
+  --kournikova-700: #83622c;
+  --kournikova-800: #664a20;
+  --kournikova-900: #533b19;
+  --kournikova-950: #2f220b;
+
+  --gray-400: #989E94;
+  --gray-700: #4e544a;
+  --gray-800: #3a3e37;
+
+  --font-fr-h: "Alegreya", sans-serif;
+  --font-fr-p: "Onest", sans-serif;
+
+  --radius-fr-ui: 12px;
+  --radius-fr-block: 24px;
+
+  --fsz-fr-headings: clamp(2.5rem, calc(2.071rem + 2.143vw), 4rem);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  background: 0;
+}
+
+*,
+*::before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+button {
+  border: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button,
+a {
+  cursor: pointer;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-fr-h);
+}
+
+a,
+p,
+li,
+button,
+input,
+span {
+  font-family: var(--font-fr-p);
+}
+
+a,
+button {
+  transition: all 0.5s;
+}

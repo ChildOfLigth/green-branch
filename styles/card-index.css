@@ -1,0 +1,133 @@
+.main_content {
+  width: 84.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, calc(1.429rem + 2.857vw), 4rem);
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main_content > .content_introductory-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+.content_introductory-text > .introductory-text_title {
+  color: var(--primary-800);
+  font-size: var(--fsz-fr-headings);
+  font-weight: 700;
+}
+.content_introductory-text > .introductory-text_description {
+  color: var(--primary-900);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.main_content > .content_card-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(0.9375rem, calc(0.616rem + 0.804vw), 1.5rem);
+}
+.content_card-list > .card-list_card {
+  width: 48.7%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  background-color: var(--kournikova-100);
+  border-radius: var(--radius-fr-block);
+  border: 1px solid var(--primary-200);
+  overflow: hidden;
+}
+
+.card-list_card > .card_main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.card_main-content > .main-content_text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 12px;
+}
+.main-content_text-content > .text-content_tag-card {
+  background-color: #f6da65;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--primary-900);
+}
+.main-content_text-content > .text-content_title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-900);
+}
+.main-content_text-content > .text-content_description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-800);
+  line-height: 150%;
+}
+
+.card_main-content > .text-content_nav-link {
+  width: auto;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  padding: 12px;
+  background-color: var(--primary-800);
+  border-radius: var(--radius-fr-ui);
+}
+
+@media (max-width: 1220px) {
+  .content_card-list > .card-list_card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card-list_card > .card_main-content {
+    align-items: start;
+    gap: 24px;
+  }
+
+  .card_decorate-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 700px) {
+  .main_content {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .main_content > .content_card-list {
+    gap: 24px;
+  }
+
+  .content_card-list > .card-list_card {
+    width: 100%;
+  }
+}
