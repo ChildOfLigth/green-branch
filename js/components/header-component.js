@@ -49,6 +49,32 @@ class Header extends HTMLElement {
     burgerMenu.classList.remove("open");
   }
 
+  openDropDownMenu() {
+    const dropdown = document.querySelector(
+      ".content_dropdown-menu > .content_link",
+    );
+    const menu = document.querySelector(".dropdown-menu_variants");
+    const arrow = document.querySelector(".link_arrow-ico");
+
+    dropdown.onclick = () => {
+      menu.classList.toggle("open");
+      arrow.classList.toggle("rotate");
+    };
+  }
+
+  bindEvents() {
+    const btnOpenMenu = this.querySelector(".content_menu-burger");
+    const btnCloseMenu = this.querySelector(".content_close-menu");
+
+    if (btnOpenMenu) {
+      btnOpenMenu.addEventListener("click", this.showMenuBurger.bind(this));
+    }
+
+    if (btnCloseMenu) {
+      btnCloseMenu.addEventListener("click", this.closeMenuBurger.bind(this));
+    }
+  }
+
   render() {
     const mediaQuery = window.matchMedia("(max-width: 740px)");
 
@@ -70,8 +96,9 @@ class Header extends HTMLElement {
 
             <nav class="content_burger-menu">
               <ul class="burger-menu_links">
-                <li class="links_el">
+                <li>
                   <a
+                    class="links_el" 
                     href="/"
                     data-page-name="home"
                   >
@@ -84,43 +111,44 @@ class Header extends HTMLElement {
                     <summary
                       class="links_el"
                       data-page-name="equipment"
+                      style="cursor: pointer"
                     >
                       Техніка
                     </summary>
 
-                    <ul class="dropdown-menu_variants">
+                    <ul class="dropdown-list_variants">
                       <li>
-                        <a href="/pages/equipment.html?type=long-sword">
+                        <a class="variants_link" href="/pages/equipment.html?type=long-sword">
                           Довгий меч
                         </a>
                       </li>
 
                       <li>
-                        <a href="/pages/equipment.html?type=sword">
+                        <a class="variants_link" href="/pages/equipment.html?type=sword">
                           Меч
                         </a>
                       </li>
 
                       <li>
-                        <a href="/pages/equipment.html?type=espada">
+                        <a class="variants_link" href="/pages/equipment.html?type=espada">
                           Еспада
                         </a>
                       </li>
 
                       <li>
-                        <a href="/pages/equipment.html?type=saber">
+                        <a class="variants_link" href="/pages/equipment.html?type=saber">
                           Шабля
                         </a>
                       </li>
 
                       <li>
-                        <a href="/pages/equipment.html?type=spear">
+                        <a class="variants_link" href="/pages/equipment.html?type=spear">
                           Спис
                         </a>
                       </li>
 
                       <li>
-                        <a href="/pages/equipment.html?type=unarmed">
+                        <a class="variants_link" href="/pages/equipment.html?type=unarmed">
                           Бій без зброї
                         </a>
                       </li>
@@ -128,8 +156,9 @@ class Header extends HTMLElement {
                   </details>
                 </li>
 
-                <li class="links_el" >
+                <li>
                   <a
+                    class="links_el"
                     href="/pages/about-us.html"
                     data-page-name="about-us"
                   >
@@ -137,8 +166,9 @@ class Header extends HTMLElement {
                   </a>
                 </li>
 
-                <li class="links_el" >
+                <li>
                   <a
+                    class="links_el"
                     href="/pages/card-index.html"
                     data-page-name="card-index"
                   >
@@ -146,8 +176,9 @@ class Header extends HTMLElement {
                   </a>
                 </li>
 
-                <li class="links_el">
+                <li>
                   <a
+                    class="links_el"
                     href="/pages/blog.html"
                     data-page-name="blog"
                   >
@@ -182,58 +213,56 @@ class Header extends HTMLElement {
                 </a>
 
                 <div class="content_dropdown-menu">
-                  <details>
-                    <summary
-                      data-page-name="equipment"
-                      class="content_link"
-                    >
-                      Техніка
+                <button
+                  class="content_link"
+                  data-page-name="equipment"
+                >
+                  Техніка
 
-                      <img
-                        src="/imgs/icons/bottom_arrow.svg"
-                        alt="."
-                        class="link_arrow-ico"
-                      />
-                    </summary>
+                <img
+                  src="/imgs/icons/bottom_arrow.svg"
+                  alt="."
+                  class="link_arrow-ico"
+                />
+                </button>
 
-                    <ul class="dropdown-menu_variants">
-                      <li>
-                        <a href="/pages/equipment.html?type=long-sword">
-                          Довгий меч
-                        </a>
-                      </li>
+              <ul class="dropdown-menu_variants">
+                <li>
+                  <a href="/pages/equipment.html?type=long-sword">
+                    Довгий меч
+                  </a>
+                </li>
 
-                      <li>
-                        <a href="/pages/equipment.html?type=sword">
-                          Меч
-                        </a>
-                      </li>
+                <li>
+                  <a href="/pages/equipment.html?type=sword">
+                    Меч
+                  </a>
+                </li>
 
-                      <li>
-                        <a href="/pages/equipment.html?type=espada">
-                          Еспада
-                        </a>
-                      </li>
+                <li>
+                  <a href="/pages/equipment.html?type=espada">
+                    Еспада
+                  </a>
+                </li>
 
-                      <li>
-                        <a href="/pages/equipment.html?type=saber">
-                          Шабля
-                        </a>
-                      </li>
+                <li>
+                  <a href="/pages/equipment.html?type=saber">
+                    Шабля
+                  </a>
+                </li>
 
-                      <li>
-                        <a href="/pages/equipment.html?type=spear">
-                          Спис
-                        </a>
-                      </li>
+                <li>
+                  <a href="/pages/equipment.html?type=spear">
+                    Спис
+                  </a>
+                </li>
 
-                      <li>
-                        <a href="/pages/equipment.html?type=unarmed">
-                          Бій без зброї
-                        </a>
-                      </li>
-                    </ul>
-                  </details>
+                <li>
+                  <a href="/pages/equipment.html?type=unarmed">
+                    Бій без зброї
+                  </a>
+                </li>
+              </ul>
                 </div>
 
                 <a
@@ -275,24 +304,12 @@ class Header extends HTMLElement {
 
       this.bindEvents();
       this.checkCurrentPage();
+      this.openDropDownMenu();
     };
 
     checkScreen();
 
     mediaQuery.addEventListener("change", checkScreen);
-  }
-
-  bindEvents() {
-    const btnOpenMenu = this.querySelector(".content_menu-burger");
-    const btnCloseMenu = this.querySelector(".content_close-menu");
-
-    if (btnOpenMenu) {
-      btnOpenMenu.addEventListener("click", this.showMenuBurger.bind(this));
-    }
-
-    if(btnCloseMenu) {
-      btnCloseMenu.addEventListener("click", this.closeMenuBurger.bind(this));
-    }
   }
 }
 

@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   background-color: #fdfdfc;
+  border-bottom: 2px solid var(--gray-400);
 }
 .header_content {
   width: 85%;
@@ -38,7 +40,6 @@
   display: flex;
   height: 100%;
   align-items: center;
-  justify-center: center;
   color: var(--gray-700);
   font-size: 16px;
   font-weight: 500;
@@ -72,7 +73,7 @@
 .dropdown-menu_variants {
   width: auto;
   height: auto;
-  display: flex;
+  display: none;
   opacity: 0;
   flex-direction: column;
   align-items: center;
@@ -86,12 +87,13 @@
   transition: all 0.3s;
   overflow: hidden;
 }
-
-.content_dropdown-menu:hover > button > .link_arrow-ico {
-  transform: rotate(0.5turn);
-}
-.content_dropdown-menu:hover > .dropdown-menu_variants {
+.dropdown-menu_variants.open {
   opacity: 1;
+  display: flex;
+}
+
+.link_arrow-ico.rotate {
+  transform: rotate(0.5turn);
 }
 
 .dropdown-menu_variants > li {
@@ -130,9 +132,11 @@
 }
 
 @media (max-width: 740px) {
-  body {
-    overflow-y: hidden;
+  .header {
+    height: auto;
+    padding: 12px 0;
   }
+
   .content_logo {
     width: 32px;
   }
@@ -165,20 +169,46 @@
     align-items: start;
     justify-content: space-between;
     z-index: 20;
-    padding: clamp(1.5625rem, calc(0.884rem + 3.482vw), 4rem);
+    padding: clamp(1.875rem, calc(0.982rem + 4.464vw), 5rem);
   }
+
   .burger-menu_links {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    gap: 15px;
+    gap: 24px;
+    position: relative;
+    inset: 0;
   }
-  .burger-menu_links > .links_el {
+  .links_el {
+    color: var(--primary-800);
+    font-size: clamp(1.375rem, calc(0.964rem + 2.054vw), 2.8125rem);
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .dropdown-list_variants {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 30px;
+  }
+  .variants_link {
     color: var(--primary-800);
     font-size: clamp(1.125rem, calc(0.821rem + 1.518vw), 2.1875rem);
     font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .links_el:hover,
+  .variants_link:hover {
+    color: var(--primary-600);
   }
 
   .content_close-menu {

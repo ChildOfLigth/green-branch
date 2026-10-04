@@ -29,7 +29,8 @@
   --kournikova-900: #533b19;
   --kournikova-950: #2f220b;
 
-  --gray-400: #989E94;
+  --gray-400: #989e94;
+  --gray-600: #656b61;
   --gray-700: #4e544a;
   --gray-800: #3a3e37;
 
@@ -50,9 +51,7 @@
 
 *,
 *::before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+*::after {
   box-sizing: border-box;
 }
 
@@ -73,21 +72,30 @@ aside {
 html,
 body {
   height: 100%;
-  width: 100%;
+  margin: 0;
+  min-height: 100%;
   font-size: 100%;
   line-height: 1;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-family: var(--font-fr-p);
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  min-height: 100svh;
+  flex: 1 0 auto;
+}
 input,
 button,
 textarea {
   font-family: inherit;
-}
-button {
   border: none;
 }
 
@@ -105,26 +113,14 @@ a:visited {
 ul li {
   list-style: none;
 }
+
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  font-family: var(--font-fr-h);
   font-size: inherit;
   font-weight: inherit;
-}
-
-h4,
-h5,
-h6 {
-  font-family: var(--font-fr-h);
-}
-
-a,
-p,
-li,
-button,
-input,
-span {
-  font-family: var(--font-fr-p);
 }
 
 a,
