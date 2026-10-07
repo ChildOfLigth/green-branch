@@ -11,6 +11,7 @@
 
 .footer_content {
   width: 100%;
+  max-width: var(--max-w-content);
   display: flex;
   align-items: center;
   justify-content: flex-start;
