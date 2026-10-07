@@ -41,6 +41,7 @@
   --radius-fr-block: 24px;
 
   --fsz-fr-headings: clamp(2.5rem, calc(2.071rem + 2.143vw), 4rem);
+  --max-w-content: 1600px;
 }
 
 * {

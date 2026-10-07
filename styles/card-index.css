@@ -1,5 +1,6 @@
 .main_content {
   width: 84.4%;
+  max-width: var(--max-w-content);
   display: flex;
   flex-direction: column;
   align-items: center;
